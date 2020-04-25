@@ -1,0 +1,12 @@
+{
+  "extends": ["taro"],
+  "rules": {
+    "react/sort-comp": [0, { "order": ["lifecycle"], "groups": ["config"] }],
+    "no-unused-vars": ["error", { "varsIgnorePattern": "Taro" }],
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".tsx"] }
+    ]
+  },
+  "parser": "babel-eslint"
+}
