@@ -1,20 +1,20 @@
-import Taro, { Component } from "@tarojs/taro";
-import { View, Text } from "@tarojs/components";
-import "./index.scss";
-import '../../components/vant-weapp/dist/common/index.wxss'
+import Taro, { Component } from '@tarojs/taro'
+import { View, Text } from '@tarojs/components'
+import './index.scss'
+import '../../components/vant-weapp/common/index.wxss'
 
 export default class Index extends Component {
   config = {
-    navigationBarTitleText: "首页",
-    navigationStyle: "custom",
+    navigationBarTitleText: '首页',
+    navigationStyle: 'custom',
     // 定义需要引入的第三方组件
     usingComponents: {
-      "wxnav": "../../components/navBar/navBar", // 书写第三方组件的相对路径
-      "vant-button": "../../components/vant-weapp/dist/button/index", // 书写第三方组件的相对路径
-      "vant-card": "../../components/vant-weapp/dist/card/index", // 书写第三方组件的相对路径
-      "van-nav-bar": "../../components/vant-weapp/dist/nav-bar/index", // 书写第三方组件的相对路径
-    },
-  };
+      wxnav: '../../components/navBar/navBar', // 书写第三方组件的相对路径
+      'vant-button': '../../components/vant-weapp/button/index', // 书写第三方组件的相对路径
+      'vant-card': '../../components/vant-weapp/card/index', // 书写第三方组件的相对路径
+      'van-nav-bar': '../../components/vant-weapp/nav-bar/index' // 书写第三方组件的相对路径
+    }
+  }
 
   componentWillMount() {}
 
@@ -25,15 +25,15 @@ export default class Index extends Component {
   componentDidShow() {}
 
   componentDidHide() {}
-  onClickLeft(){
+  onClickLeft() {
     console.log(1212)
   }
-  onClickRight(){
+  onClickRight() {
     console.log(1111111111111111111111111111111111)
   }
   render() {
-    const navBar = true;
-    const title = 121211;
+    const navBar = true
+    const title = 121211
     return (
       <View className='inde'>
         {/* <van-nav-bar
@@ -44,20 +44,23 @@ export default class Index extends Component {
           onclick-left={this.onClickLeft.bind(this)}
           onclick-right={this.onClickRight.bind(this)}
         /> */}
-         <wxnav navBar={navBar} back title={title}></wxnav>
+        <wxnav navBar={navBar} back title={title}></wxnav>
         <Text>Hello world!</Text>
-        <View className='van-hairline--bottom van-ellipsis' style='height:200px;width:100px'>法大师傅大师傅士大夫士大夫士大夫士大夫反对法士大夫士大夫的</View>
-        <vant-card num='2'
+        <View
+          className='van-hairline--bottom van-ellipsis'
+          style='height:200px;width:100px'
+        >
+          法大师傅大师傅士大夫士大夫士大夫士大夫反对法士大夫士大夫的
+        </View>
+        <vant-card
+          num='2'
           price='2.00'
           desc='描述信息'
           title='商品标题'
           style='margin-top:10px;'
         ></vant-card>
         <vant-button type='primary'>1212</vant-button>
-
-
-
       </View>
-    );
+    )
   }
 }
