@@ -1,8 +1,8 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "navTest",
-  "description": "自定导航栏测试",
-  "appid": "wx00af2d3955d230c2",
+  "projectname": "prettyGirl",
+  "description": "美女",
+  "appid": "wx63165189184eb131",
   "setting": {
     "urlCheck": true,
     "es6": false,
