@@ -9,7 +9,7 @@ export default class Index extends Component {
     list: []
   }
   config = {
-    navigationBarTitleText: '首页',
+    navigationBarTitleText: '点开长按保存',
     // 定义需要引入的第三方组件
     usingComponents: {
       'van-image': '../../components/vant-weapp/image/index',
@@ -20,7 +20,7 @@ export default class Index extends Component {
 
   componentWillMount() {
     Taro.showLoading()
-    list().then(res => {
+    list(this.$router.params.name).then(res => {
       this.setState({
         list: res
       })
@@ -56,15 +56,17 @@ export default class Index extends Component {
               <van-row>
                 {item.images.map((item1, index1) => {
                   return (
-                    <van-col span='8' key={index1}>
-                      <van-image
-                        width='100%'
-                        fit='widthFix'
-                        lazy-load
-                        src={item1.url}
-                        onClick={this.preview.bind(this, item1.detail)}
-                      ></van-image>
-                    </van-col>
+                    <View key={index1}>
+                      <van-col span='8'>
+                        <van-image
+                          width='100%'
+                          fit='widthFix'
+                          lazy-load
+                          src={item1.url}
+                          onClick={this.preview.bind(this, item1.detail)}
+                        ></van-image>
+                      </van-col>
+                    </View>
                   )
                 })}
               </van-row>
