@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Swiper, SwiperItem } from '@tarojs/components'
 import './index.scss'
 import '../../components/vant-weapp/common/index.wxss'
-import { list, detail } from '../../servers/servers'
+import { list, detail, girl } from '../../servers/servers'
 
 export default class Index extends Component {
   state = {
@@ -69,7 +69,28 @@ export default class Index extends Component {
       title: this.state.list[e.currentTarget.current].images[0].title
     })
   }
-  componentDidMount() {}
+  componentDidMount() {
+    girl().then(res => {
+      console.log(res)
+      if (!res) {
+        this.setState({
+          list: [
+            {
+              title: '桌面壁纸',
+              images: [
+                {
+                  title: '桌面壁纸',
+                  url:
+                    'http://pic1.win4000.com/mobile/2020-07-29/5f2133c47d21e.jpg',
+                  name: 'wallpaper'
+                }
+              ]
+            }
+          ]
+        })
+      }
+    })
+  }
 
   componentWillUnmount() {}
 

@@ -9,3 +9,6 @@ export const detail = (url) => {
   return HTTPREQUEST.post('/api/detail', { url })
 }
 
+export const girl = () => {
+  return HTTPREQUEST.post('/api/girl')
+}
